@@ -1,17 +1,13 @@
-import {autorun, observable} from "mobx";
+import { observable, action } from 'mobx';
 
 
 class UserStore {
-    @observable data = null;
+    @observable data = '21321312f';
 
-    constructor() {
-        autorun(() => console.log(this.report));
-    }
-
-    setData(data) {
+    @action setData(data) {
         this.data = data;
     }
 }
 
 
-export const todoStore = new UserStore();
+export default new UserStore();
