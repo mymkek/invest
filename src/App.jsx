@@ -1,7 +1,12 @@
 import React from 'react';
 import {inject, observer} from "mobx-react";
-import {Switch, Route, BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+
+import 'antd/dist/antd.css';
+
 import HomePage from "./pages/Home";
+import Header from "./components/Header";
+import CorellationPage from "./pages/Corellation";
 
 
 
@@ -11,8 +16,10 @@ const App = inject('userStore')(observer((props) => {
 
     return (
         <BrowserRouter>
+            <Header/>
             <Switch>
-                <Route path={'/'} component={HomePage}/>
+                <Route exact path={'/'} component={HomePage}/>
+                <Route exact path={'/corellation'} component={CorellationPage}/>
             </Switch>
         </BrowserRouter>
     )
